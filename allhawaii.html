@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="grid.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: YakuHanJP, "游ゴシック Medium", YuGothic, YuGothicM, "Noto Sans Japanese", sans-serif;
+        }
+        
+        html {
+            --col-gap: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding-left: var(--col-gap);
+            padding-right: var(--col-gap);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: calc(var(--col-gap)*-1);
+            margin-right: calc(var(--col-gap)*-1);
+        }
+
+        [class*="col-"] {
+            box-sizing: border-box;
+            padding: var(--col-gap);
+        }
+
+        .col-1 {
+            width: 8.333333%;
+        }
+
+        .col-2 {
+            width: 16.666666%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.333333%;
+        }
+
+        .col-5 {
+            width: 41.666666%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.333333%;
+        }
+
+        .col-8 {
+            width: 66.666666%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.333333%;
+        }
+
+        .col-11 {
+            width: 91.666666%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .pic {
+           width: 425px; 
+          
+           margin-bottom: 10px;
+        }
+
+        .main .card img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+        .main{
+            margin-bottom: 20px;
+        }
+
+        h2 {
+                font-size: 18px;
+                color: #202124;
+            }
+            .info .info-content .text h3{
+                font-size: 10px;
+                color: #202124;
+            }
+
+            p {
+                color: #202124;
+                font-size: 14px;
+            }
+            .intro{
+                justify-content: space-between;
+            }
+        .intro span{
+            font-size: 14px;
+                color: #6C6D6E;
+                font-family: neue-haas-grotesk-display, sans-serif;
+        }
+      
+        .main .all img, .subtitle img{
+            width: 20px;
+        }
+        .info .info-content{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5px;
+        }
+      
+        .info .info-content .pic{
+            width: 170px;
+            height: 100px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .info .info-content .pic img{
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+            height: 100%;
+        }  
+     
+
+        @media screen and (min-width:768px) {
+            .col-md-1 {
+                width: 8.333333%;
+            }
+
+            .col-md-2 {
+                width: 16.666666%;
+            }
+
+            .col-md-3 {
+                width: 25%;
+            }
+
+            .col-md-4 {
+                width: 33.333333%;
+            }
+
+            .col-md-5 {
+                width: 41.666666%;
+            }
+
+            .col-md-6 {
+                width: 50%;
+            }
+
+            .col-md-7 {
+                width: 58.333333%;
+            }
+
+            .col-md-8 {
+                width: 66.666666%;
+            }
+
+            .col-md-9 {
+                width: 75%;
+            }
+
+            .col-md-10 {
+                width: 83.333333%;
+            }
+
+            .col-md-11 {
+                width: 91.666666%;
+            }
+
+            .col-md-12 {
+                width: 100%;
+            }
+
+            .card-other-content {
+                max-width: 1200px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                display: block;
+            }
+
+            .card .pic {
+                width: 100%;
+            }
+
+            .card .text {
+                width: 100%;
+            }    
+        }
+
+        @media screen and (min-width:1024px) {
+            .col-lg-1 {width: 8.333333%;}
+            .col-lg-2 {width: 16.666666%;}
+            .col-lg-3 {width: 25%;}
+            .col-lg-4 {width: 33.333333%;}
+            .col-lg-5 {width: 41.666666%;}
+            .col-lg-6 {width: 50%;}
+            .col-lg-7 {width: 58.333333%;}
+            .col-lg-8 {width: 66.666666%;}
+            .col-lg-9 {width: 75%;}
+            .col-lg-10 {width: 83.333333%;}
+            .col-lg-11 {width: 91.666666%;}
+            .col-lg-12 {width: 100%;}
+            }
+
+        @media screen and (min-width:1200px) {
+            .col-xl-1 {width: 8.333333%;}
+    .col-xl-2 {width: 16.666666%;}
+    .col-xl-3 {width: 25%;}
+    .col-xl-4 {width: 33.333333%;}
+    .col-xl-5 {width: 41.666666%;}
+    .col-xl-6 {width: 50%;}
+    .col-xl-7 {width: 58.333333%;}
+    .col-xl-8 {width: 66.666666%;}
+    .col-xl-9 {width: 75%;}
+    .col-xl-10 {width: 83.333333%;}
+    .col-xl-11 {width: 91.666666%;}
+    .col-xl-12 {width: 100%;}
+
+            .card-banner {
+                display: flex;
+            }
+
+            .card-banner .pic {
+                width: 600px;
+            }
+
+            .card-row {
+                display: block;
+            }
+
+            .card-colum {
+                display: flex;
+            }
+
+            .card .pic img {
+                width: 100%;
+            }
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+                <div class="card intro row col-12 col-md-6">
+                    <div class="title">
+                        <h2>旅行者にできること</h2>
+                        <span>What Travelers Can Do</span>
+                    </div>
+                    <div class="all">
+                        <span>すべて見る</span>
+                        <img src="images/right_arrow_short.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="pic">
+                        <img src="images/Screenshot-107.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>今年もアースデーにビーチクリーンを開催！</h2>
+                        <p>今年もアースデーにサスティナブル・コーストラインズ・ハワイによってビーチクリーンが開催されます。旅行者の方も参加できる活動もありますので、ぜひ地元の人々と一緒にボランティア活動に参加してみてはいかがでしょうか？
+                        </p>
+                        <p>2023.04.18</p>
+                    </div>
+                </div>
+            </div>
+
+<div class="info col-6">
+            <div class="info-content">
+                <div class="card">
+                    <div class="subtitle">
+                        <img src="images/icon_eco.svg" alt="">
+                        <span>エコ活動</span>
+                    </div>
+                    <div class="pic">
+                        <img src="images/22060822404659769.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>【ハワイ島】海深914mから湧き出る海洋深層水の製塩所ツアーを体験！お土産に最適な12種類の絶品ハワイアンソルトも</h3>
+                        <p>2022.06.14</p>
+                    </div>
+                </div>
+
+                    <div class="card">
+                    <div class="subtitle">
+                        <img src="images/icon_event.svg" alt="">
+                        <span>イベント</span>
+                    </div>
+                    <div class="pic">
+                        <img src="images/17542.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>キング・カメハメハ・デー制定150周年記念イベント</h3>
+                        <p>2022.06.08</p>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="info-content">
+                    <div class="card">
+                    <div class="subtitle">
+                        <img src="images/icon_other.svg" alt="">
+                        <span>その他</span>
+                    </div>
+                    <div class="pic">
+                        <img src="images/UT1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>ユニクロ アラモアナ店〜UTme!限定デザイン「Together in Hawaii」シリーズでハワイフードバンクに寄付を〜</h3>
+                        <p>2022.01.28</p>
+                    </div>
+                </div>
+
+             <div class="card">
+                    <div class="subtitle">
+                        <img src="images/icon_culture.svg" alt="">
+                        <span>カルチャー</span>
+                    </div>
+                    <div class="pic">
+                        <img src="images/EUAP21_Header-Image_600x400-2048x1366.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>「E Ulu A Paʻa」～ビショップ ミュージアム が年に一度のファンドレイジングを開催！～</h3>
+                        <p>2021.08.12</p>
+                    </div>
+                </div>
+       
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
